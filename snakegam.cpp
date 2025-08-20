@@ -4,16 +4,12 @@
 #include <windows.h>
 #include <conio.h>
 using namespace std;
-
 #define MAX_LENGTH 1000
-
 const char DIR_UP = 'W';
 const char DIR_DOWN = 'S';
 const char DIR_LEFT = 'A';
 const char DIR_RIGHT = 'D';
-
 int consoleWidth, consoleHeight;
-
 void initScreen()
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -22,6 +18,7 @@ void initScreen()
     consoleHeight = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
     consoleWidth = csbi.srWindow.Right - csbi.srWindow.Left + 1;
 }
+
 
 struct Point{
     int xCoord;
@@ -212,7 +209,6 @@ public:
     }
 
 };
-
 int main(){
     srand(time(0));
     initScreen();
@@ -223,7 +219,6 @@ int main(){
         board->draw();
         Sleep(100);
     }
-
     cout<<"Game over"<<endl;
     cout<<"Final score is :"<<board->getScore();
     return 0;
